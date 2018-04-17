@@ -6,7 +6,7 @@ import scrapy
 from scrapy_splash import SplashRequest
 
 class JobSpider(scrapy.Spider):
-	name = "jobs"
+	name = "jobsearch"
 
 	myscript= """
 
@@ -109,7 +109,7 @@ class JobSpider(scrapy.Spider):
  
   		local UPcategory = args.category
   		local category = string.lower(UPcategory)	-- Lower Case to Avoid Case Conflicts
-  		local searchQuery = args.keyword
+  		local searchQuery = args.keywords
 
 	  	local function copyToSearch(searchQuery)
 	  		for i = #searchQuery, 1, -1 do
@@ -141,13 +141,13 @@ class JobSpider(scrapy.Spider):
 
 	"""
 
-	def __init__(self, category="None", keyword="None", *args, **kwargs):
+	def __init__(self, category="None", keywords="None", *args, **kwargs):
 		super(JobSpider, self).__init__(*args, **kwargs)
 		self.category = category
-		self.keyword = keyword
+		self.keywords = keywords
 
 	def start_requests(self):
-		yield SplashRequest(url="https://frbog.taleo.net/careersection/1/moresearch.ftl?lang=en&portal=101430233", callback=self.parse, endpoint='execute', args={'lua_source': self.myscript, 'category':self.category, 'keyword':self.keyword})
+		yield SplashRequest(url="https://frbog.taleo.net/careersection/1/moresearch.ftl?lang=en&portal=101430233", callback=self.parse, endpoint='execute', args={'lua_source': self.myscript, 'category':self.category, 'keywords':self.keywords})
 
 	def parse(self, response):
 		for job in response.css("span.titlelink"):
