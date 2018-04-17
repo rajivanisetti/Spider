@@ -23,104 +23,104 @@ class JobSpider(scrapy.Spider):
 	end
 
 	function getValueFromCategory(category)
-  		if category == "Accounting" then
+  		if category == "accounting" then
    		 	return "110100124"
-  		elseif category == "Administrative" then
+  		elseif category == "administrative" then
     		return "210100124"
-  		elseif category == "Architecture/Engineering" then
+  		elseif category == "architecture/engineering" then
     		return "2110100124"
-  		elseif category == "Attorney" then
+  		elseif category == "attorney" then
     		return "2210100124"
-  		elseif category == "Bank Examiner" then
+  		elseif category == "bank examiner" then
     		return "2310100124"
-  		elseif category == "Business Analyst" then
+  		elseif category == "business analyst" then
    			return "2410100124"
-  		elseif category == "Computer Professional" then
+  		elseif category == "computer professional" then
     		return "2510100124"
-  		elseif category == "Computer Support" then
+  		elseif category == "computer support" then
     		return "2610100124"
-  		elseif category == "Economist" then
+  		elseif category == "economist" then
     		return "2710100124"
-  		elseif category == "Editors/Writers" then
+  		elseif category == "editors/writers" then
     		return "2810100124"
-  		elseif category == "EEO" then
+  		elseif category == "eeo" then
     		return "310100124"
-  		elseif category == "Financial Analyst" then
+  		elseif category == "financial analyst" then
     		return "410100124"
-  		elseif category == "Governors" then
+  		elseif category == "governors" then
     		return "510100124"
-  		elseif category == "Graphic Design" then
+  		elseif category == "graphic design" then
     		return "610100124"
-  		elseif category == "Health Services" then
+  		elseif category == "health services" then
     		return "2910100124"
-  		elseif category == "Human Resources" then
+  		elseif category == "human resources" then
     		return "3010100124"
-  		elseif category == "Interns" then
+  		elseif category == "interns" then
     		return "3110100124"
-  		elseif category == "Mail Services and Supply" then
+  		elseif category == "mail services and supply" then
     		return "3210100124"
-  		elseif category == "Other Clerical-Acctg/Payroll" then
+  		elseif category == "other clerical-acctg/payroll" then
     		return "3310100124"
-  		elseif category == "Other Clerical-Administration" then
+  		elseif category == "other clerical-administration" then
     		return "3410100124"
-  		elseif category == "Other Clerical-Bldg Services" then
+  		elseif category == "other clerical-bldg services" then
     		return "3510100124"
-  		elseif category == "Other Clerical-ComputerSupport" then
+  		elseif category == "other clerical-computersupport" then
     		return "3610100124"
-  		elseif category == "Other Clerical-Finance/Bus An" then
+  		elseif category == "other clerical-finance/bus an" then
     		return "3710100124"
-  		elseif category == "Other Clerical Food Services" then
+  		elseif category == "other clerical food services" then
     		return "3810100124"
-  		elseif category == "Other Clerical-Graphics" then
+  		elseif category == "other clerical-graphics" then
     		return "3910100124"
-  		elseif category == "Other Clerical-HR" then
+  		elseif category == "other clerical-hr" then
     		return "4010100124"
-  		elseif category == "Other Clerical-Mail Svc/Supply" then
+  		elseif category == "other clerical-mail svc/supply" then
     		return "4110100124"
-  		elseif category == "Other Clerical-Other" then
+  		elseif category == "other clerical-other" then
     		return "4210100124"
-  		elseif category == "Other Clerical-PR/Writ/Edit" then
+  		elseif category == "other clerical-pr/writ/edit" then
     		return "4310100124"
-  		elseif category == "Other Clerical-Purchasing" then
+  		elseif category == "other clerical-purchasing" then
     		return "4410100124"
-  		elseif category == "Other Clerical-Training" then
+  		elseif category == "other clerical-training" then
     		return "4510100124"
-  		elseif category == "Other Professional" then
+  		elseif category == "other professional" then
     		return "4610100124"
-  		elseif category == "Public Relations" then
+  		elseif category == "public relations" then
     		return "4710100124"
-  		elseif category == "Purchasing" then
+  		elseif category == "purchasing" then
     		return "4810100124"
-  		elseif category == "Research Assistant" then
+  		elseif category == "research assistant" then
     		return "4910100124"
-  		elseif category == "Security Administration" then
+  		elseif category == "security administration" then
     		return "5010100124"
-  		elseif category == "Security Escort" then
+  		elseif category == "security escort" then
     		return "5110100124"
-  		elseif category == "Secrtry/Steno/Clerk Typ/Recept" then
+  		elseif category == "secrtry/steno/clerk typ/recept" then
     		return "710100124"
-  		elseif category == "Security Admin Support" then
+  		elseif category == "security admin support" then
     		return "810100124"
-  		elseif category == "Security" then
+  		elseif category == "security" then
     		return "910100124"
-  		elseif category == "Trade/Crafts-Eng/Plant" then
+  		elseif category == "trade/crafts-eng/plant" then
     		return "1010100124"
-  		elseif category == "Trade/Crafts-Food Service" then
+  		elseif category == "trade/crafts-food service" then
     		return "1110100124"
-  		elseif category == "Trade/Crafts-Maintenance" then
+  		elseif category == "trade/crafts-maintenance" then
     		return "5210100124"
-  		elseif category == "Trade/Crafts-Motor Transport" then
+  		elseif category == "trade/crafts-motor transport" then
     		return "5310100124"
-  		elseif category == "Trade/Crafts-Other" then
+  		elseif category == "trade/crafts-other" then
     		return "5410100124"
-  		elseif category == "Trade/Crafts-Print/Litho" then
+  		elseif category == "trade/crafts-print/litho" then
     		return "5510100124"
-  		elseif category == "Trade/Crafts-Postal/Supply" then
+  		elseif category == "trade/crafts-postal/supply" then
     		return "5610100124"
-  		elseif category == "Training" then
+  		elseif category == "training" then
     		return "5710100124"
   		else
-    		error('Invalid category')
+    		error('Invalid Category')
   		end
 	end
     
@@ -128,8 +128,8 @@ class JobSpider(scrapy.Spider):
 
 function main(splash, args)
   
-  function dropdown(category)
-  	local js = string.format("document.getElementById('advancedSearchInterface\\.jobfield1L1').value = %s;", getValueFromCategory(category))
+  local function dropdown(category)
+  	local js = "document.getElementById('advancedSearchInterface.jobfield1').value = ".. getValueFromCategory(category) ..";"
   	assert(splash:runjs(js))
 	end
 
@@ -140,17 +140,30 @@ function main(splash, args)
   local searches = splash:select_all('input')
   local keywordSearch = findSearch(searches)
  
-  local category = args.category
+  local UPcategory = args.category
+  local category = string.lower(UPcategory)
   local searchQuery = args.keyword
+
+  local function copyToSearch(searchQuery)
+  	for i = #searchQuery, 1, -1 do
+    	local char = searchQuery:sub(i,i)
+    	if char == ' ' then
+      		assert(keywordSearch:send_keys("<Space>"))
+      	else
+        	assert(keywordSearch:send_keys(char))
+       	end
+ 	end
+  end
   
-  if category ~= "None" then
+  if UPcategory ~= "None" then
   	dropdown(category)
+  	assert(splash:wait(2.0))
   end
 
   local searchButton = findButton(inputs)
   
   if searchQuery ~= "None" then
-  	assert(keywordSearch:send_keys(searchQuery))
+  	copyToSearch(searchQuery)
   	assert(splash:wait(1.0))
   end
   
@@ -164,7 +177,7 @@ end
 
 	"""
 
-	def __init__(self, category=None, keyword=None, *args, **kwargs):
+	def __init__(self, category="None", keyword="None", *args, **kwargs):
 		super(JobSpider, self).__init__(*args, **kwargs)
 		self.category = category
 		self.keyword = keyword
@@ -173,7 +186,10 @@ end
 		yield SplashRequest(url="https://frbog.taleo.net/careersection/1/moresearch.ftl?lang=en&portal=101430233", callback=self.parse, endpoint='execute', args={'lua_source': self.myscript, 'category':self.category, 'keyword':self.keyword})
 
 	def parse(self, response):
-		print("Got to here")
+		for job in response.css("span.titlelink"):
+			yield {
+				'Job Listing': job.css("a::text").extract()
+			}
 
 
 
