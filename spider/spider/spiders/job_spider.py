@@ -10,7 +10,8 @@ class JobSpider(scrapy.Spider):
 
 	myscript= """
 
-	function findButton(inputs)
+	-- Find/Return Search Button Element
+	function findButton(inputs)	
   		for _, input in ipairs(inputs) do
     		if input.node.attributes.title == "Search for jobs matching the specified criteria" then
       			return input
@@ -18,6 +19,7 @@ class JobSpider(scrapy.Spider):
   		end
 	end
 
+	-- Find/Return Search Box Element
 	function findSearch(searches)
   		for _, search in ipairs(searches) do
     		if search.node.attributes.name == "keyword" then
@@ -26,6 +28,7 @@ class JobSpider(scrapy.Spider):
   		end
 	end
 
+	-- Map Linking Category Names to Dropdown Values
 	local categories = {
       ["accounting"] = "110100124",
       ["administrative"] = "210100124",
@@ -77,6 +80,7 @@ class JobSpider(scrapy.Spider):
       ["training"] = "5710100124"
   	}
 
+  	-- Return Value from Category Name
   	function getValueFromCategory(category)
   		local value = categories[category]
       	if value == nil then
@@ -87,8 +91,10 @@ class JobSpider(scrapy.Spider):
 	end
     
 
+	-- Main Splash Function
 	function main(splash, args)
   
+  		-- Function to Select Category from Dropdown Menu
   		local function dropdown(category)
   			local js = "document.getElementById('advancedSearchInterface.jobfield1').value = ".. getValueFromCategory(category) ..";"
   			assert(splash:runjs(js))
@@ -99,10 +105,10 @@ class JobSpider(scrapy.Spider):
   		assert(splash:wait(5))
   		local inputs = splash:select_all('input.inputbutton')
   		local searches = splash:select_all('input')
-  		local keywordSearch = findSearch(searches)
+  		local keywordSearch = findSearch(searches)	-- Searchbar Element
  
   		local UPcategory = args.category
-  		local category = string.lower(UPcategory)
+  		local category = string.lower(UPcategory)	-- Lower Case to Avoid Case Conflicts
   		local searchQuery = args.keyword
 
 	  	local function copyToSearch(searchQuery)
@@ -116,19 +122,19 @@ class JobSpider(scrapy.Spider):
 	 		end
 	  	end
   
-  		if UPcategory ~= "None" then
+  		if UPcategory ~= "None" then	-- Select from Dropdown Menu
   			dropdown(category)
   			assert(splash:wait(2.0))
   		end
 
-  		local searchButton = findButton(inputs)
+  		local searchButton = findButton(inputs)	-- Find Submit Button
   
-  		if searchQuery ~= "None" then
+  		if searchQuery ~= "None" then	-- Enter Keyword into Searchbox
   			copyToSearch(searchQuery)
   			assert(splash:wait(1.0))
   		end
   
-  		searchButton:mouse_click()
+  		searchButton:mouse_click()	-- Click Search/Submit Form
   		assert(splash:wait(3))
   		return splash:html()
 	end
@@ -148,10 +154,3 @@ class JobSpider(scrapy.Spider):
 			yield {
 				'Job Listing': job.css("a::text").extract()
 			}
-
-
-
-
-
-
-
